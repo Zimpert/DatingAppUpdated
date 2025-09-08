@@ -1,0 +1,19 @@
+<div class="flex justify-center gap-3 pt-10">
+  <button class="bg-primary rounded p-1" (click)="get404Error()">Get 404 Error</button>
+  <button class="bg-secondary rounded p-1" (click)="get400Error()">Get 400 Error</button>
+  <button class="bg-error rounded p-1" (click)="get500Error()">Get 500 Error</button>
+  <button class="bg-accent rounded p-1" (click)="get401Error()">Get 401 Error</button>
+  <button class="bg-success rounded p-1" (click)="get400ValidationError()">
+    Get 400 Validation Error
+  </button>
+</div>
+
+@if (validationErrors().length > 0) {
+<div>
+  <ul>
+    @for (error of validationErrors(); track $index) {
+    <li>{{ error }}</li>
+    }
+  </ul>
+</div>
+}
